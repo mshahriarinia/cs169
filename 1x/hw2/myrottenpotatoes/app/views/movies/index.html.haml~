@@ -16,7 +16,7 @@ hi
       %td= m.title
       %td= m.rating
       %td= m.release_date
-      %td= link_to "Read more about #{m.title}" movie_path(m)
+      %td= link_to "Read more about #{m.title}", movie_path(m)
 
       
 
