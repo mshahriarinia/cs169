@@ -10,4 +10,15 @@ class MoviesController < ApplicationController
     # you can go to /movies/Star Wars Morty, btu also you need to fix the index template to generate url of 
     # model by title -that piece not done in this iteration
   end
+
+  def new 
+    # default render 'new' template
+  end
+
+  def create 
+    debugger
+    movie = Movie.create!(params[:movie]) #hash
+    flash[:notice] = "#{movie.title} was successfully created."
+    redirect_to movies_path    
+  end
 end

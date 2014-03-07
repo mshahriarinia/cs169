@@ -9,10 +9,15 @@
   %body
 
     header text goes here
-    %hl
+    %hr
+    
+    - if flash[:notice]
+      #notice.message= flash[:notice]
+    - elsif flash[:warning]
+      #warning.message= flash[:message]
 
-    = yield # yields the control to the view to generate stuff for here
+    = yield # yields the control to the view to generate stuff for here. The above '#notice.message=' is haml notation for div tag   
 
-    %hl
+    %hr
     footnote text goes here.
 
