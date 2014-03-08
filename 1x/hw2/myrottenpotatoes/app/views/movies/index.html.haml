@@ -11,6 +11,8 @@ hi
       %th Rating
       %th Release Date
       %th More Info
+      %th Edit
+      %th Delete
   %tbody
     - @movies.each do |m|
       %tr
@@ -18,6 +20,8 @@ hi
         %td= m.rating
         %td= m.release_date
         %td= link_to "Read more about #{m.title}", movie_path(m)
+        %td= link_to "Edit movie", edit_movie_path(m)
+        %td= button_to "Delete", movie_path(m), :method => :delete, data: { confirm: "Are you sure?" }
 
 = link_to "Add new movie", new_movie_path()
       
